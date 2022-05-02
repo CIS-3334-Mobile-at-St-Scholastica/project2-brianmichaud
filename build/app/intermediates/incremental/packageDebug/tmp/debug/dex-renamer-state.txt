@@ -1,0 +1,4 @@
+#Mon May 02 00:09:17 CDT 2022
+base.0=/Users/Brian/Documents/GitHub/project2-brianmichaud/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
