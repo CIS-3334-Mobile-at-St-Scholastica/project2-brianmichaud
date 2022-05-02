@@ -1,6 +1,6 @@
-# project2
+# project2 - Brian Michaud
 
-A new Flutter project.
+A Flutter project submission for CIS 3334
 
 ## Getting Started
 
