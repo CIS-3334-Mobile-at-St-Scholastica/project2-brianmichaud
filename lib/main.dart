@@ -1,9 +1,20 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(const MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -34,6 +45,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final TextEditingController _itemTextInput = TextEditingController();
   final TextEditingController _quantityTextInput = TextEditingController();
+
+  //Firebase variables
+  final CollectionReference itemCollection = FirebaseFirestore.instance.collection('items');
 
   Widget textInputWidget() {
     return SizedBox(
@@ -71,10 +85,10 @@ class _MyHomePageState extends State<MyHomePage> {
       child: ElevatedButton(
         onPressed: () async {
           setState(() async {
-            //await itemListDB.add({'item_name': _itemTextInput.text});
+            await itemCollection.add({'item_name': _itemTextInput.text});
             _itemTextInput.clear();
 
-            //await itemListDB.add({'item_quantity': _quantityTextInput.text});
+            //await itemCollection.add({'item_quantity': _quantityTextInput.text});
             _quantityTextInput.clear();
           });
         },
@@ -83,13 +97,13 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  /*
+
   Widget itemListWidget() {
     return Expanded(
-      child: StreamBuilder(stream: itemListDB.snapshots(),
+      child: StreamBuilder(stream: itemCollection.snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           return ListView.builder(
-            itemCount: snapshot.data.docs.length,
+            itemCount: snapshot.data?.docs.length,
             itemBuilder: (BuildContext context, int position) {
               return Card(
               child: itemTileWidget(snapshot, position),
@@ -99,12 +113,11 @@ class _MyHomePageState extends State<MyHomePage> {
         })
     );
   }
-  */
 
   Widget itemTileWidget(snapshot, position) {
     return ListTile(
       leading: Icon(Icons.check_box),
-      title: Text(snapshot.data.docs[position]['item name']),
+      title: Text(snapshot.data.docs[position]['item_name']),
     );
   }
 
@@ -127,7 +140,8 @@ class _MyHomePageState extends State<MyHomePage> {
             quantityInputWidget(),
             SizedBox(height: 20,),
             addButtonWidget(),
-            //itemListWidget(),
+            SizedBox(height: 20,),
+            itemListWidget(),
           ],
          ),
       ),

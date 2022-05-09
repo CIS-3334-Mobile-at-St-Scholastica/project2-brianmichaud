@@ -8,12 +8,12 @@
         "source": "/Users/Brian/Documents/GitHub/project2-brianmichaud/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/Users/Brian/Documents/GitHub/project2-brianmichaud/build/app/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "/Users/Brian/Documents/GitHub/project2-brianmichaud/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
-    },
-    {
         "merged": "/Users/Brian/Documents/GitHub/project2-brianmichaud/build/app/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
         "source": "/Users/Brian/Documents/GitHub/project2-brianmichaud/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/Brian/Documents/GitHub/project2-brianmichaud/build/app/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/Brian/Documents/GitHub/project2-brianmichaud/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
         "merged": "/Users/Brian/Documents/GitHub/project2-brianmichaud/build/app/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
