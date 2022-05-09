@@ -1,4 +1,4 @@
-#CIS 3334 - Project2 - Brian Michaud
+CIS 3334 - Project2 - Brian Michaud
 
 A Flutter project submission for CIS 3334
 
